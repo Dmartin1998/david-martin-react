@@ -1,3 +1,28 @@
 .p-3 {
-    background-color: rgb(199, 242, 208);
+    background-color: rgb(138, 179, 147);
+}
+
+.header__container {
+    display: grid;
+    grid-template-areas: 
+    "logo nav";
+}
+
+.header__logo {
+    grid-area: logo;
+    margin: auto;
+    color: white;
+    font-weight: bold;
+}
+
+.header__nav {
+    grid-area: nav;
+    margin: auto;
+}
+
+.header__link {
+    padding: 1em;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
 }

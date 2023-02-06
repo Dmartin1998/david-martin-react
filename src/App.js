@@ -1,28 +1,29 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { useState } from 'react';
-import Clicker from './components/Clicker';
+import ItemListContainer from './components/ItemListContainer';
 import { Navbar } from "./components/Navbar";
-import Button from 'react-bootstrap/Button';
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { Footer } from './components/Footer';
 
 function App() {
 
-  const [show, setShow] = useState(false)
-
-  const handleShow = () => {
-    setShow(!show)
-  }
-
   return (
-    <div>
-      <Navbar />
-      
-      <Button variant="dark" size="lg" className='m-3' onClick={handleShow}>Clicker</Button>
 
-      {show && <Clicker />}
+    <BrowserRouter>
 
-      
-    </div>
+        <Navbar />
+
+        <Routes>
+          <Route path='/' element/>
+          <Route path='/tienda' element={ <ItemListContainer /> }/>
+          <Route path='/nosotros' element/>
+          <Route path='*' element={ <Navigate to={"/"}/> }/>
+        </Routes>
+
+        <Footer />
+      </BrowserRouter>
+
   );
 }
 
 export default App;
+

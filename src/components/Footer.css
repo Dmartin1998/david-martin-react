@@ -1,0 +1,10 @@
+footer {
+    padding: 1em;
+    text-align: center;
+    background: #252a24;
+}
+
+.copy {
+    font-weight: bold;
+    color: white;
+}   
